@@ -11,7 +11,9 @@ posts.value = await postService.findAll();
 
 <template>
   <div class="container mx-auto w-2/3">
-    <h1 class="text-center text-xl font-bold py-4">Welcome to My Blog!</h1>
+    <h1 class="text-center text-xl font-bold py-4">
+      Welcome to My <span class="line-through">Fucking</span> Website!
+    </h1>
     <div id="posts" v-for="post of posts" v-bind:key="post.id">
       <post-preview v-bind="post" />
     </div>

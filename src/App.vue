@@ -1,10 +1,15 @@
 <script setup>
-import Home from "./components/Home.vue";
+import AppFooter from "./components/AppFooter.vue";
 </script>
 
 <template>
   <Suspense>
-    <router-view></router-view>
+    <template #default>
+      <div>
+        <router-view></router-view>
+        <app-footer />
+      </div>
+    </template>
     <template #fallback>
       <span>Loading...</span>
     </template>
