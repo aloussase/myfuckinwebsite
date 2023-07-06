@@ -7,6 +7,7 @@ import {
   updateDoc,
   serverTimestamp,
   setDoc,
+  deleteDoc,
 } from "firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
 
@@ -59,5 +60,11 @@ export default class FirebasePostService {
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
     });
+  }
+
+  async delete(id) {
+    const docRef = doc(this.#db, "posts", id);
+    await deleteDoc(docRef);
+    return true;
   }
 }

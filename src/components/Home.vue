@@ -23,7 +23,7 @@ posts.value = await postService.findAll();
         </router-link>
       </span>
     </div>
-    <div id="posts" v-for="post of posts" v-bind:key="post.id">
+    <div v-for="post of posts" v-bind:key="post.id">
       <post-preview v-bind="post" />
     </div>
   </div>

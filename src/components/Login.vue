@@ -26,6 +26,7 @@ async function onSubmit() {
     .then(() => {
       const to = localStorage.getItem("route.to");
       if (to) {
+        localStorage.removeItem("route.to");
         router.replace(JSON.parse(to));
       } else {
         router.back();
@@ -60,7 +61,7 @@ async function onSubmit() {
         v-model="password"
       />
       <input
-        class="rounded bg-blue-400 hover:bg-blue-500 text-white p-2"
+        class="rounded bg-blue-400 hover:bg-blue-500 text-white p-2 cursor-pointer"
         type="submit"
         value="Sign-in"
       />

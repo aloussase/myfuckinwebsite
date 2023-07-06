@@ -1,12 +1,29 @@
 <script setup>
+import { useRouter } from "vue-router";
 import { defineProps, inject } from "vue";
+
 import Markdown from "./Markdown.vue";
 
 const props = defineProps(["id"]);
 
+const router = useRouter();
+
+const authService = inject("services.auth");
 const postService = inject("services.posts");
 
 const post = await postService.getById(props.id);
+
+async function deletePost() {
+  if (authService.user === null) {
+    router.push("/login");
+    return;
+  }
+
+  const ok = await postService.delete(props.id);
+  if (ok) {
+    router.replace("/");
+  }
+}
 </script>
 
 <template>
@@ -24,6 +41,9 @@ const post = await postService.getById(props.id);
       <router-link :to="`/posts/${id}/edit`" class="text-xs text-blue-400">
         Edit
       </router-link>
+      <span class="text-xs text-red-500 cursor-pointer" @click="deletePost">
+        Delete
+      </span>
     </div>
     <markdown :content="post.content"></markdown>
   </div>
