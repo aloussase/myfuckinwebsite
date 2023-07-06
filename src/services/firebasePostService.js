@@ -6,7 +6,9 @@ import {
   getDoc,
   updateDoc,
   serverTimestamp,
+  setDoc,
 } from "firebase/firestore";
+import { v4 as uuidv4 } from "uuid";
 
 import { postConverter } from "../models/post.js";
 
@@ -46,5 +48,16 @@ export default class FirebasePostService {
     } catch {
       throw new Error("Failed to update post");
     }
+  }
+
+  async create({ title, content }) {
+    const newId = uuidv4();
+    const docRef = doc(this.#db, "posts", newId);
+    await setDoc(docRef, {
+      title,
+      content,
+      createdAt: serverTimestamp(),
+      updatedAt: serverTimestamp(),
+    });
   }
 }

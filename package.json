@@ -13,6 +13,7 @@
     "highlight.js": "^11.8.0",
     "markdown-it": "^13.0.1",
     "markdown-it-highlightjs": "^4.0.1",
+    "uuid": "^9.0.0",
     "vue": "^3.2.47",
     "vue-router": "^4.2.3",
     "vue3-ace-editor": "^2.2.2"

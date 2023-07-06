@@ -3,6 +3,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "./components/Home.vue";
 import Post from "./components/Post.vue";
 import EditPost from "./components/EditPost.vue";
+import CreatePost from "./components/CreatePost.vue";
 import Login from "./components/Login.vue";
 
 function ensureLoggedIn(authService) {
@@ -25,6 +26,7 @@ export default function router(authService) {
     routes: [
       { path: "/", component: Home },
       { path: "/login", component: Login },
+      { path: "/posts/new", component: CreatePost },
       { path: "/posts/:id", component: Post, props: true },
       {
         path: "/posts/:id/edit",
