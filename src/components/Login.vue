@@ -23,7 +23,14 @@ async function onSubmit() {
 
   authService
     .signIn(email.value, password.value)
-    .then(() => router.back())
+    .then(() => {
+      const to = localStorage.getItem("route.to");
+      if (to) {
+        router.replace(JSON.parse(to));
+      } else {
+        router.back();
+      }
+    })
     .catch((err) => (errMsg.value = err.message));
 }
 </script>

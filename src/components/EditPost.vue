@@ -1,6 +1,8 @@
 <script setup>
 import { ref, inject, computed } from "vue";
 import { useRouter } from "vue-router";
+
+import { VAceEditor } from "vue3-ace-editor";
 import Markdown from "./Markdown.vue";
 
 const props = defineProps(["id"]);
@@ -17,6 +19,15 @@ const fullContents = computed(
 );
 
 const router = useRouter();
+
+const editorOptions = {
+  showLineNumbers: false,
+  showGutter: false,
+  fontSize: "1rem",
+  minLines: 20,
+  maxLines: 20,
+  keyboardHandler: "ace/keyboard/vim",
+};
 
 async function onSubmit() {
   try {
@@ -39,12 +50,25 @@ async function onSubmit() {
     <div class="flex gap-10">
       <form @submit.prevent="onSubmit" class="flex flex-col gap-1 flex-1">
         <input class="border p-2" type="text" v-model="postTitle" />
-        <textarea class="border p-2" v-model="postContent"></textarea>
-        <input
-          class="bg-blue-400 hover:bg-blue-500 text-white rounded p-2 cursor-pointer"
-          type="submit"
-          value="Update post"
+        <v-ace-editor
+          class="border p-2"
+          v-model:value="postContent"
+          :options="editorOptions"
+          lang="markdown"
         />
+        <div class="flex w-full gap-2">
+          <input
+            class="bg-blue-400 hover:bg-blue-500 text-white rounded p-2 cursor-pointer flex-1"
+            type="submit"
+            value="Update post"
+          />
+          <button
+            class="bg-red-400 hover:bg-red-500 text-white rounded p-2 cursor-pointer flex-1"
+            @click.prevent="router.back()"
+          >
+            Cancel
+          </button>
+        </div>
       </form>
       <markdown class="flex-1" :content="fullContents"></markdown>
     </div>

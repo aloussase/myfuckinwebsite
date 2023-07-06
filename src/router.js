@@ -6,8 +6,9 @@ import EditPost from "./components/EditPost.vue";
 import Login from "./components/Login.vue";
 
 function ensureLoggedIn(authService) {
-  return function (_to, _from) {
+  return function (to, _from) {
     if (authService.user === null) {
+      localStorage.setItem("route.to", JSON.stringify(to));
       return "/login";
     }
     return true;
