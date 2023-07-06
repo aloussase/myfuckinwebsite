@@ -12,7 +12,7 @@ posts.value = await postService.findAll();
 </script>
 
 <template>
-  <div class="container mx-auto w-2/3">
+  <div class="container mx-auto w-full md:w-2/3 p-2">
     <h1 class="text-center text-xl font-bold py-4">
       Welcome to My <span class="line-through">Fucking</span> Website!
     </h1>
