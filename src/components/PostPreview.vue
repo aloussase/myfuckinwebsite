@@ -6,7 +6,7 @@ defineProps(["id", "title", "content", "updatedAt"]);
 
 <template>
   <div
-    class="post-preview container flex flex-col p-2 m-2 border border-solid rounded"
+    class="post-preview container flex flex-col p-2 my-2 border border-solid rounded"
   >
     <span class="font-bold text-lg">{{ title }}</span>
     <span class="text-xs text-gray-500">{{
