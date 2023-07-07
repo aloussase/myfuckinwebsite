@@ -37,4 +37,9 @@ p {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
 </style>

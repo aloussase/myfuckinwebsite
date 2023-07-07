@@ -11,6 +11,7 @@
   "dependencies": {
     "firebase": "^9.23.0",
     "highlight.js": "^11.8.0",
+    "linkify-it": "^4.0.1",
     "markdown-it": "^13.0.1",
     "markdown-it-highlightjs": "^4.0.1",
     "uuid": "^9.0.0",
