@@ -3,6 +3,7 @@ import { useRouter } from "vue-router";
 import { defineProps, inject, ref } from "vue";
 
 import Comment from "./Comment.vue";
+import ConfirmationBox from "./ConfirmationBox.vue";
 import Markdown from "./Markdown.vue";
 
 const props = defineProps(["id"]);
@@ -12,6 +13,9 @@ const router = useRouter();
 const authService = inject("services.auth");
 const postService = inject("services.posts");
 const commentsService = inject("services.comments");
+
+const confirmDelete = ref(false);
+const deleteConfirmed = ref(false);
 
 const post = await postService.getById(props.id);
 
@@ -49,6 +53,12 @@ async function deletePost() {
 
 <template>
   <div class="todo container mx-auto p-4 w-full md:w-2/3">
+    <confirmation-box
+      v-if="confirmDelete"
+      title="Are you sure you want to delete the post?"
+      @cancel="confirmDelete = false"
+      @confirm="deletePost"
+    />
     <h1 class="post-title text-2xl text-center">{{ post.title }}</h1>
     <div class="post-meta container flex flex-col">
       <span class="text-xs text-gray-500">By: Alexander Goussas</span>
@@ -63,7 +73,10 @@ async function deletePost() {
         <router-link :to="`/posts/${id}/edit`" class="text-xs text-blue-400">
           Edit
         </router-link>
-        <span class="text-xs text-red-500 cursor-pointer" @click="deletePost">
+        <span
+          class="text-xs text-red-500 cursor-pointer"
+          @click="confirmDelete = true"
+        >
           Delete
         </span>
       </div>
