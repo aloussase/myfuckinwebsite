@@ -25,6 +25,7 @@ export default class FirebasePostService {
     const querySnapshot = await getDocs(collRef);
     const blogPosts = [];
     querySnapshot.forEach((doc) => blogPosts.push(doc.data()));
+    blogPosts.sort((b1, b2) => b2.updatedAt.getTime() - b1.updatedAt.getTime());
     return blogPosts;
   }
 

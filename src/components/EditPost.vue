@@ -35,10 +35,10 @@ async function onSubmit() {
 
 <template>
   <div
-    class="container w-full md:w-3/4 mx-auto p-2 items-center justify-center"
+    class="container h-screen w-full mx-auto p-2 items-center justify-center"
   >
     <h1 class="text-2xl py-2 text-center">Edit Post</h1>
-    <div class="flex gap-10">
+    <div class="flex h-full gap-10">
       <form @submit.prevent="onSubmit" class="flex flex-col gap-1 flex-1">
         <input class="border p-2" type="text" v-model="postTitle" />
         <markdown-editor v-model="postContent" />
@@ -56,7 +56,10 @@ async function onSubmit() {
           </button>
         </div>
       </form>
-      <markdown class="flex-1" :content="fullContents"></markdown>
+      <markdown
+        class="flex-1 h-4/5 overflow-y-auto"
+        :content="fullContents"
+      ></markdown>
     </div>
   </div>
 </template>
