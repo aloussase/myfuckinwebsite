@@ -18,11 +18,4 @@ export default class Config {
       appId: import.meta.env.VITE_FIREBASE_APP_ID,
     };
   }
-
-  get authConfig() {
-    return {
-      adminEmail: import.meta.env.VITE_FIREBASE_ADMIN_EMAIL,
-      adminPassword: import.meta.env.VITE_FIREBASE_ADMIN_PASSWORD,
-    };
-  }
 }
