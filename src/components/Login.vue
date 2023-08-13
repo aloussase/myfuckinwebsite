@@ -39,6 +39,9 @@ async function onSubmit() {
 <template>
   <div class="flex flex-col container mx-auto w-full p-2 md:w-2/3">
     <h1 class="text-center text-2xl py-2">Sign-in</h1>
+    <small class="text-center text-xs text-gray-500">
+      If you are not me, you probably shouldn't be here.
+    </small>
     <div v-if="errMsg" class="bg-red-400 text-white rounded p-2">
       <span>{{ errMsg }}</span>
     </div>

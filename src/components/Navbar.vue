@@ -9,7 +9,7 @@ const authService = inject("services.auth");
     <router-link to="/" class="text-blue-400 underline text-sm">
       Home
     </router-link>
-    <div v-if="authService.user === null">
+    <div v-if="authService.user === null" class="flex items-center justify-center h-full">
       <router-link to="/login" class="text-blue-400 underline text-sm">
         Login
       </router-link>

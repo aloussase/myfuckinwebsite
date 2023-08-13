@@ -14,7 +14,7 @@ posts.value = await postService.findAll();
 <template>
   <div class="container mx-auto w-full md:w-2/3 p-2">
     <h1 class="text-center text-xl font-bold py-4">
-      Welcome to My <span class="line-through">Fucking</span> Website!
+        Alexander Goussas' Blog
     </h1>
     <div class="action-buttons flex">
       <span v-if="authService.user !== null">

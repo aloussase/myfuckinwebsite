@@ -4,7 +4,7 @@
   <footer class="flex flex-col items-center justify-center w-full p-2">
     <span>
       Fork me on
-      <a target="_blank" href="https://github.com/aloussase/myfuckinwebsite">
+      <a target="_blank" href="https://github.com/aloussase/myfuckinwebsite" class="text-black">
         <i class="fa-brands fa-github" />
       </a>
     </span>
