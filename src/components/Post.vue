@@ -1,10 +1,11 @@
 <script setup>
 import { useRouter } from "vue-router";
-import { defineProps, inject, ref } from "vue";
+import { inject, ref } from "vue";
 
 import Comment from "./Comment.vue";
 import ConfirmationBox from "./ConfirmationBox.vue";
 import Markdown from "./Markdown.vue";
+import NiceButton from "./NiceButton.vue";
 
 const props = defineProps(["id"]);
 
@@ -15,7 +16,6 @@ const postService = inject("services.posts");
 const commentsService = inject("services.comments");
 
 const confirmDelete = ref(false);
-const deleteConfirmed = ref(false);
 
 const post = await postService.getById(props.id);
 
@@ -52,7 +52,7 @@ async function deletePost() {
 </script>
 
 <template>
-  <div class="todo container mx-auto p-4 w-full md:w-2/3">
+  <div class="todo container mx-auto p-4 w-full md:p-4">
     <confirmation-box
       v-if="confirmDelete"
       title="Are you sure you want to delete the post?"
@@ -68,17 +68,18 @@ async function deletePost() {
     </div>
     <br />
     <div class="action-buttons flex gap-2 items-center">
-      <router-link to="/" class="text-xs text-blue-400"> Go back </router-link>
+      <router-link to="/" class="text-xs text-blue-400">
+        <NiceButton text="Go back" />
+      </router-link>
       <div v-if="authService.user !== null" class="flex items-center gap-2">
         <router-link :to="`/posts/${id}/edit`" class="text-xs text-blue-400">
-          Edit
+          <NiceButton text="Edit" />
         </router-link>
-        <span
-          class="text-xs text-red-500 cursor-pointer"
+        <NiceButton
+          text="Delete"
+          kind="destroy-action"
           @click="confirmDelete = true"
-        >
-          Delete
-        </span>
+        />
       </div>
     </div>
     <markdown :content="post.content"></markdown>
@@ -94,11 +95,7 @@ async function deletePost() {
           placeholder="Nice post!"
           v-model="newComment"
         ></textarea>
-        <input
-          class="bg-blue-400 hover:bg-blue-500 cursor-pointer text-white rounded p-1"
-          type="submit"
-          value="Comment"
-        />
+        <NiceButton text="Comment" />
       </form>
       <comment
         v-for="comment of postComments"

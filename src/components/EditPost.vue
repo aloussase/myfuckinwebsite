@@ -15,7 +15,7 @@ const postTitle = ref(post.title);
 const postContent = ref(post.content);
 
 const fullContents = computed(
-  () => `# ${postTitle.value}\n` + postContent.value,
+  () => `# ${postTitle.value}\n` + postContent.value
 );
 
 const router = useRouter();
@@ -57,7 +57,7 @@ async function onSubmit() {
         </div>
       </form>
       <markdown
-        class="flex-1 h-4/5 overflow-y-auto"
+        class="flex-1 h-4/5 overflow-y-auto overflow-x-auto"
         :content="fullContents"
       ></markdown>
     </div>

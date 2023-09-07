@@ -3,7 +3,6 @@ import "./style.css";
 import App from "./App.vue";
 
 import { initializeApp } from "firebase/app";
-import firebase from "firebase/compat/app";
 import "firebase/firestore";
 
 import router from "./router.js";

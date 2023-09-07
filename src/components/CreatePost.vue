@@ -24,7 +24,7 @@ async function onSubmit() {
 </script>
 
 <template>
-  <div class="p-2 w-full md:w-2/3 container mx-auto flex flex-col gap-1">
+  <div class="p-2 md:p-4 w-full container mx-auto flex flex-col gap-1">
     <h1>New Post</h1>
     <div class="flex gap-4">
       <form class="flex flex-col gap-1 flex-1" @submit.prevent="onSubmit">

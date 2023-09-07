@@ -2,6 +2,8 @@
 import { ref, inject } from "vue";
 import { useRouter } from "vue-router";
 
+import NiceButton from "./NiceButton.vue";
+
 const authService = inject("services.auth");
 
 const router = useRouter();
@@ -63,11 +65,7 @@ async function onSubmit() {
         required
         v-model="password"
       />
-      <input
-        class="rounded bg-blue-400 hover:bg-blue-500 text-white p-2 cursor-pointer"
-        type="submit"
-        value="Sign-in"
-      />
+      <NiceButton text="Sign-in" class="w-full p-2" />
     </form>
   </div>
 </template>

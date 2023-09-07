@@ -2,6 +2,7 @@
 import { ref, inject } from "vue";
 
 import PostPreview from "./PostPreview.vue";
+import NiceButton from "./NiceButton.vue";
 
 const postService = inject("services.posts");
 const authService = inject("services.auth");
@@ -12,14 +13,12 @@ posts.value = await postService.findAll();
 </script>
 
 <template>
-  <div class="container mx-auto w-full md:w-2/3 p-2">
-    <h1 class="text-center text-xl font-bold py-4">
-        Alexander Goussas' Blog
-    </h1>
+  <div class="container mx-auto w-full p-2 md:p-4">
+    <h1>Blog Posts</h1>
     <div class="action-buttons flex">
       <span v-if="authService.user !== null">
         <router-link to="/posts/new" class="text-blue-400 text-xs underline">
-          Crear un post
+          <NiceButton text="Crear un post" />
         </router-link>
       </span>
     </div>

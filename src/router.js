@@ -5,6 +5,7 @@ import Post from "./components/Post.vue";
 import EditPost from "./components/EditPost.vue";
 import CreatePost from "./components/CreatePost.vue";
 import Login from "./components/Login.vue";
+import About from "./pages/About.vue";
 
 function ensureLoggedIn(authService) {
   return function (to, _from) {
@@ -28,6 +29,7 @@ export default function router(authService) {
       { path: "/login", component: Login },
       { path: "/posts/new", component: CreatePost },
       { path: "/posts/:id", component: Post, props: true },
+      { path: "/about", name: "about", component: About },
       {
         path: "/posts/:id/edit",
         component: EditPost,

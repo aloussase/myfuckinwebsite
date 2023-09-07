@@ -18,7 +18,7 @@ const markdown = new MarkdownIt({
 <style>
 ul,
 li {
-  list-style: inherit;
+  list-style: inside;
 }
 
 h1 {
@@ -40,6 +40,6 @@ p {
 
 a {
   color: blue;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 </style>

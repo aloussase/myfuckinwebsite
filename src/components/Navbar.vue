@@ -1,26 +1,56 @@
 <script setup>
-import { inject } from "vue";
-
-const authService = inject("services.auth");
+import meJpeg from "../assets/me.jpeg";
 </script>
 
 <template>
-  <nav class="flex w-full items-center justify-center py-2 gap-2">
-    <router-link to="/" class="text-blue-400 underline text-sm">
-      Home
-    </router-link>
-    <div v-if="authService.user === null" class="flex items-center justify-center h-full">
-      <router-link to="/login" class="text-blue-400 underline text-sm">
-        Login
+  <nav class="flex flex-col h-screen border-r-2 p-4 py-8 justify-between">
+    <div class="flex flex-col items-center gap-4">
+      <img
+        :src="meJpeg"
+        alt="me"
+        class="rounded-full self-center border border-black hover:scale-105 transition"
+        width="150"
+      />
+      <div class="flex flex-col items-center">
+        <p>Alexander Goussas's Blog</p>
+        <small style="margin-top: -10px">A blog about programming</small>
+      </div>
+      <router-link to="/">
+        <span
+          class="text-xl text-black hover:text-gray-600 font-bold no-underline"
+        >
+          Home
+        </span>
+      </router-link>
+      <router-link to="/about">
+        <span
+          class="text-xl text-black hover:text-gray-600 font-bold no-underline"
+        >
+          About
+        </span>
       </router-link>
     </div>
-    <div v-else>
-      <span
-        class="text-blue-400 underline text-sm cursor-pointer"
-        @click="authService.logout"
+    <div class="flex gap-2 self-center">
+      <a
+        href="mailto:goussasalexander@gmail.com"
+        class="text-black hover:text-gray-600"
       >
-        Logout
-      </span>
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+      <a
+        href="https://github.com/aloussase"
+        class="text-black hover:text-gray-600"
+      >
+        <i class="fa-brands fa-github"></i>
+      </a>
     </div>
   </nav>
 </template>
+
+<style scoped>
+.router-link-active {
+  background-color: #f4f4f4;
+  padding: 0.2rem;
+  border-radius: 5px;
+}
+</style>
