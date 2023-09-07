@@ -10,7 +10,7 @@ const props = withDefaults(
   }>(),
   {
     kind: "link",
-  },
+  }
 );
 
 const buttonKlass = computed(() => {
@@ -20,6 +20,9 @@ const buttonKlass = computed(() => {
     "bg-blue-400": actsAsLink,
     "hover:bg-blue-500": actsAsLink,
     "border-blue-600": actsAsLink,
+    "dark:bg-purple-400": actsAsLink,
+    "dark:hover:bg-purple-500": actsAsLink,
+    "border-purple-600": actsAsLink,
     "bg-red-400": actsAsDestructiveAction,
     "hover:bg-red-500": actsAsDestructiveAction,
     "border-red-600": actsAsDestructiveAction,

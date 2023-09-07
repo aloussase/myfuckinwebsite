@@ -11,7 +11,7 @@ defineProps(["id", "title", "content", "updatedAt"]);
     class="post-preview container flex flex-col p-4 my-2 border-2 border-solid rounded shadow"
   >
     <span class="font-bold text-lg">{{ title }}</span>
-    <span class="text-xs text-gray-500">{{
+    <span class="text-xs text-gray-500 dark:text-gray-100">{{
       "Last updated: " + updatedAt
     }}</span>
     <span class="my-2">{{ content.substring(0, 69) + "..." }}</span>

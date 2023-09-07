@@ -1,6 +1,8 @@
 <script setup>
 import MarkdownIt from "markdown-it";
 import MarkdownItHighlightjs from "markdown-it-highlightjs";
+import hljs from "highlight.js";
+import "highlight.js/styles/qtcreator-dark.css";
 
 defineProps(["content"]);
 
@@ -8,7 +10,7 @@ const markdown = new MarkdownIt({
   html: true,
   linkify: true,
   typographer: true,
-}).use(MarkdownItHighlightjs);
+}).use(MarkdownItHighlightjs, { hljs });
 </script>
 
 <template>

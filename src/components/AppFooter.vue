@@ -1,10 +1,16 @@
 <script setup></script>
 
 <template>
-  <footer class="flex flex-col items-center justify-center w-full p-2">
+  <footer
+    class="flex flex-col items-center justify-center w-full p-2 bg-white text-black dark:bg-black dark:text-white"
+  >
     <span>
       Fork me on
-      <a target="_blank" href="https://github.com/aloussase/myfuckinwebsite" class="text-black">
+      <a
+        target="_blank"
+        href="https://github.com/aloussase/myfuckinwebsite"
+        class="text-black"
+      >
         <i class="fa-brands fa-github" />
       </a>
     </span>

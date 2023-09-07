@@ -11,6 +11,7 @@
   "dependencies": {
     "firebase": "^9.23.0",
     "highlight.js": "^11.8.0",
+    "highlightjs": "^9.16.2",
     "linkify-it": "^4.0.1",
     "markdown-it": "^13.0.1",
     "markdown-it-highlightjs": "^4.0.1",
@@ -20,6 +21,8 @@
     "vue3-ace-editor": "^2.2.2"
   },
   "devDependencies": {
+    "@types/highlight.js": "^10.1.0",
+    "@types/markdown-it": "^13.0.1",
     "@types/uuid": "^9.0.3",
     "@vitejs/plugin-vue": "^4.1.0",
     "autoprefixer": "^10.4.14",

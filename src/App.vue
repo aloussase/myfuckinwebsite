@@ -10,7 +10,7 @@ const navbarShowing = ref(true);
 <template>
   <Suspense>
     <template #default>
-      <div class="flex">
+      <div class="flex bg-white text-black dark:bg-black dark:text-white">
         <i
           class="fa-solid fa-bars border rounded p-1 w-fit h-fit fixed hover:bg-gray-200 cursor-pointer md:hidden"
           @click="navbarShowing = !navbarShowing"

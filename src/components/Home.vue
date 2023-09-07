@@ -13,8 +13,10 @@ posts.value = await postService.findAll();
 </script>
 
 <template>
-  <div class="container mx-auto w-full p-2 md:p-4">
-    <h1>Blog Posts</h1>
+  <div
+    class="container mx-auto w-full p-2 md:p-4 bg-white text-black dark:bg-black dark:text-white"
+  >
+    <h1 class="text-xl font-bold">Blog Posts</h1>
     <div class="action-buttons flex">
       <span v-if="authService.user !== null">
         <router-link to="/posts/new" class="text-blue-400 text-xs underline">

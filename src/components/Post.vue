@@ -52,7 +52,9 @@ async function deletePost() {
 </script>
 
 <template>
-  <div class="todo container mx-auto p-4 w-full md:p-4">
+  <div
+    class="todo container mx-auto p-4 w-full md:p-4 bg-white text-black dark:bg-black dark:text-white"
+  >
     <confirmation-box
       v-if="confirmDelete"
       title="Are you sure you want to delete the post?"
@@ -61,10 +63,12 @@ async function deletePost() {
     />
     <h1 class="post-title text-2xl text-center">{{ post.title }}</h1>
     <div class="post-meta container flex flex-col">
-      <span class="text-xs text-gray-500">By: Alexander Goussas</span>
-      <span class="text-xs text-gray-500">{{
-        "Last updated: " + post.updatedAt
-      }}</span>
+      <span class="text-xs text-gray-500 dark:text-gray-100">
+        By: Alexander Goussas
+      </span>
+      <span class="text-xs text-gray-500 dark:text-gray-100">
+        {{ "Last updated: " + post.updatedAt }}
+      </span>
     </div>
     <br />
     <div class="action-buttons flex gap-2 items-center">
@@ -91,7 +95,7 @@ async function deletePost() {
         @submit.prevent="onNewComment"
       >
         <textarea
-          class="border flex-1 p-1"
+          class="border flex-1 p-1 dark:bg-gray-100"
           placeholder="Nice post!"
           v-model="newComment"
         ></textarea>
