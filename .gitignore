@@ -25,3 +25,7 @@ dist-ssr
 .env
 .firebase
 .vim
+
+# rescript
+*.bs.js
+lib

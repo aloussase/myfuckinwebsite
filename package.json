@@ -4,9 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "js:dev": "vite",
+    "js:build": "vite build",
+    "preview": "vite preview",
+    "res:build": "rescript",
+    "res:dev": "rescript build -w",
+    "dev": "concurrently 'npm run res:dev' 'npm run js:dev'",
+    "build": "npm run res:build && npm run js:build"
   },
   "dependencies": {
     "firebase": "^9.23.0",
@@ -15,6 +19,7 @@
     "linkify-it": "^4.0.1",
     "markdown-it": "^13.0.1",
     "markdown-it-highlightjs": "^4.0.1",
+    "rescript": "^10.1.4",
     "uuid": "^9.0.0",
     "vue": "^3.2.47",
     "vue-router": "^4.2.3",
@@ -26,6 +31,7 @@
     "@types/uuid": "^9.0.3",
     "@vitejs/plugin-vue": "^4.1.0",
     "autoprefixer": "^10.4.14",
+    "concurrently": "^8.2.1",
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2",
     "vite": "^4.3.9"

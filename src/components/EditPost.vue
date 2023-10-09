@@ -3,6 +3,7 @@ import { ref, inject, computed } from "vue";
 import { useRouter } from "vue-router";
 
 import Markdown from "./Markdown.vue";
+import "../markdown.css";
 import MarkdownEditor from "./MarkdownEditor.vue";
 
 const props = defineProps(["id"]);

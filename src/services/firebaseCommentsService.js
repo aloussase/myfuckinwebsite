@@ -8,7 +8,7 @@ import {
 } from "firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
 
-import { commentConverter } from "../models/comment.js";
+import { commentConverter } from "../models/comment.bs.js";
 
 export default class FirebaseCommentsService {
   #db;
@@ -25,7 +25,7 @@ export default class FirebaseCommentsService {
       this.#db,
       "posts",
       postId,
-      "comments",
+      "comments"
     ).withConverter(commentConverter);
     const snapshot = await getDocs(collRef);
     const comments = [];

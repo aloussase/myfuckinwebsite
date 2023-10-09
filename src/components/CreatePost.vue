@@ -4,6 +4,7 @@ import { useRouter } from "vue-router";
 
 import MarkdownEditor from "./MarkdownEditor.vue";
 import Markdown from "./Markdown.vue";
+import "../markdown.css";
 
 const router = useRouter();
 

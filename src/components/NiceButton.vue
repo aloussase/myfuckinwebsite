@@ -17,12 +17,12 @@ const buttonKlass = computed(() => {
   const actsAsLink = props.kind === "link";
   const actsAsDestructiveAction = props.kind === "destroy-action";
   return {
-    "bg-blue-400": actsAsLink,
-    "hover:bg-blue-500": actsAsLink,
-    "border-blue-600": actsAsLink,
+    "bg-gray-700": actsAsLink,
+    "hover:bg-gray-900": actsAsLink,
+    "border-black": actsAsLink,
     "dark:bg-purple-400": actsAsLink,
     "dark:hover:bg-purple-500": actsAsLink,
-    "border-purple-600": actsAsLink,
+    "dark:border-purple-600": actsAsLink,
     "bg-red-400": actsAsDestructiveAction,
     "hover:bg-red-500": actsAsDestructiveAction,
     "border-red-600": actsAsDestructiveAction,

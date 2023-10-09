@@ -5,6 +5,7 @@ import { inject, ref } from "vue";
 import Comment from "./Comment.vue";
 import ConfirmationBox from "./ConfirmationBox.vue";
 import Markdown from "./Markdown.vue";
+import "../markdown.css";
 import NiceButton from "./NiceButton.vue";
 
 const props = defineProps(["id"]);
