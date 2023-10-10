@@ -5,7 +5,7 @@
     class="flex flex-col items-center justify-center w-full p-2 bg-white text-black dark:bg-black dark:text-white"
   >
     <span>
-      Fork me on
+      Knife me on
       <a
         target="_blank"
         href="https://github.com/aloussase/myfuckinwebsite"

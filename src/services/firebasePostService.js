@@ -11,7 +11,7 @@ import {
 } from "firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
 
-import { postConverter } from "../models/post.js";
+import { postConverter } from "../models/post.bs.js";
 
 export default class FirebasePostService {
   #db;

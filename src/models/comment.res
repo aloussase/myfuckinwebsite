@@ -1,13 +1,13 @@
-type create_comment = {
-  id: string,
-  comment: string,
-  createdAt: float,
-}
-
 type comment = {
   id: string,
   comment: string,
   createdAt: Js.Date.t,
+}
+
+type create_comment = {
+  id: string,
+  comment: string,
+  createdAt: float,
 }
 
 let createComment = ({id, comment, createdAt}: create_comment): comment => {
@@ -16,15 +16,6 @@ let createComment = ({id, comment, createdAt}: create_comment): comment => {
     comment,
     createdAt: Js.Date.fromFloat(createdAt),
   }
-}
-
-let fromFirestore = (snapshot, options) => {
-  let data = snapshot["data"](. options)
-  createComment({
-    id: snapshot["id"],
-    comment: data["comment"],
-    createdAt: data["createdAt"]["seconds"] *. 1000.0,
-  })
 }
 
 type firestore_comment = {
@@ -40,9 +31,24 @@ let toFirestore = (comment: comment): firestore_comment => {
   }
 }
 
-type comment_converter<'snapshot, 'options> = {
+type comment_data = {
+  id: string,
+  comment: string,
+  createdAt: Util.has_seconds,
+}
+
+let fromFirestore = (snapshot: Snapshot.t, options: Snapshot.options) => {
+  let data = snapshot->Snapshot.data(options)
+  createComment({
+    id: snapshot.id,
+    comment: data.comment,
+    createdAt: data.createdAt.seconds *. 1000.0,
+  })
+}
+
+type comment_converter = {
   toFirestore: comment => firestore_comment,
-  fromFirestore: ('snapshot, 'options) => comment,
+  fromFirestore: (Snapshot.t, Snapshot.options) => comment,
 }
 
 let commentConverter = {toFirestore, fromFirestore}

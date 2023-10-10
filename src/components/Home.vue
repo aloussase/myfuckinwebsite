@@ -37,6 +37,8 @@ posts.value = await postService.findAll();
           <p>
             Hi there! My name is Alexander Goussas. I am a Computer Engineering
             undergraduate passionate about all things programming (except AI).
+            Currently, I am also the president of my university's open source
+            club, Kokoa.
           </p>
         </div>
         <div class="flex-1">
@@ -46,7 +48,9 @@ posts.value = await postService.findAll();
             <a href="https://github.com/aloussase/gaya">Gaya</a>, a toy
             interpreted language made for solving Advent of Code problems. I
             also recently started to develop a taste for graphical applications,
-            so I decided to learn Flutter.
+            so I decided to learn <a href="https://flutter.dev/">Flutter</a>.
+            Finally, I am in the course of rewriting this site using
+            <a href="https://rescript-lang.org/">ReScript</a>.
           </p>
         </div>
       </section>
