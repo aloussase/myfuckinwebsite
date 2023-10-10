@@ -2,7 +2,7 @@
 
 <template>
   <footer
-    class="flex flex-col items-center justify-center w-full p-2 bg-white text-black dark:bg-black dark:text-white"
+    class="flex flex-col items-center justify-center w-full p-2 bg-white text-black"
   >
     <span>
       Knife me on

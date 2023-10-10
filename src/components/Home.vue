@@ -13,9 +13,7 @@ posts.value = await postService.findAll();
 </script>
 
 <template>
-  <div
-    class="container mx-auto w-full p-2 md:p-4 bg-white text-black dark:bg-black dark:text-white"
-  >
+  <div class="container mx-auto w-full p-2 md:p-4 bg-white text-black">
     <header>
       <div class="flex justify-between">
         <h3>{{ "Alexander Goussas".toUpperCase() }}</h3>
